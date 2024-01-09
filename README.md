@@ -132,7 +132,7 @@ If you like this project kindly give it a star⭐️.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank [Microverse](https://github.com/microverseinc) for the immense support.
+The design used for this webapp was created by [Gregoire Vella](https://www.behance.net/gregoirevella) and is based on his [Snapscan](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) design I would like to thank [Microverse](https://github.com/microverseinc) for the immense support. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
