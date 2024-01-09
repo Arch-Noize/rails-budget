@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_01_09_095631) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "groups", force: :cascade do |t|
     t.text "name"
     t.text "icon"
@@ -21,7 +24,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_09_095631) do
   create_table "purchases", force: :cascade do |t|
     t.text "name"
     t.decimal "amount", precision: 8, scale: 2, default: "0.0"
-    t.integer "author_id", null: false
+    t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_purchases_on_author_id"
