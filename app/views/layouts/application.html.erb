@@ -11,6 +11,17 @@
   </head>
 
   <body>
+    <% unless user_signed_in? %>
+      <% if current_page?(root_path) %>
+        <div class="sign">
+          <%= link_to "Log in", new_user_session_path %>
+          <%= link_to "Sign up", new_user_registration_path %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
