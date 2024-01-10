@@ -10,15 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_09_095631) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_10_121710) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "group_purchases_tables", force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.bigint "purchases_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_purchases_tables_on_group_id"
+    t.index ["purchases_id"], name: "index_group_purchases_tables_on_purchases_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.text "name"
     t.text "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "author_id", null: false
+    t.index ["author_id"], name: "index_groups_on_author_id"
   end
 
   create_table "purchases", force: :cascade do |t|
@@ -43,5 +54,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_09_095631) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "group_purchases_tables", "groups"
+  add_foreign_key "group_purchases_tables", "purchases", column: "purchases_id"
+  add_foreign_key "groups", "users", column: "author_id"
   add_foreign_key "purchases", "users", column: "author_id"
 end
