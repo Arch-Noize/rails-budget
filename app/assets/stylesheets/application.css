@@ -1,9 +1,12 @@
 /* Universal CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: #434b54;
 }
 
 a {
@@ -12,6 +15,14 @@ a {
 }
 
 /* Sign-in homepage */
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
 
 .sign {
   display: flex;
