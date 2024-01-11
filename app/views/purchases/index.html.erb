@@ -1,14 +1,17 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Purchases</h1>
+<%= render partial: "shared/navbar", locals: { title: "Purchases", show_burger: false } %>
 
 <div id="purchases">
   <% @purchases.each do |purchase| %>
-    <%= render purchase %>
-    <p>
-      <%= link_to "Show this purchase", purchase %>
-    </p>
+    <div class="flex flex-row m-5">
+      <img src=<%=@group.icon%> class="ml-4 p-1 basis-1/4 border-2 rounded border-black">
+      <p class="ml-4 p-4 basis-1/2">
+        <%= purchase.name %>
+      </p>
+      <p class="ml-4 p-4 basis-1/2">
+        <%= purchase.amount %> $
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New purchase", new_purchase_path %>
+<%= link_to "New purchase", new_group_purchase_path(@group) %>

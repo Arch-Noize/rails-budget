@@ -16,6 +16,7 @@ class PurchasesController < ApplicationController
     @purchase = @group.purchases.new(purchase_params)
     @purchase.author_id = current_user.id
     if @purchase.save
+      GroupPurchase.create!(group: @group, purchase: @purchase)
       redirect_to group_purchases_path(@group), notice: 'Purchase was successfully added.'
     else
       render :new
