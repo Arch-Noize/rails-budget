@@ -16,11 +16,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_10_121710) do
 
   create_table "group_purchases_tables", force: :cascade do |t|
     t.bigint "group_id", null: false
-    t.bigint "purchases_id", null: false
+    t.bigint "purchase_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_group_purchases_tables_on_group_id"
-    t.index ["purchases_id"], name: "index_group_purchases_tables_on_purchases_id"
+    t.index ["purchase_id"], name: "index_group_purchases_tables_on_purchase_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_10_121710) do
   end
 
   add_foreign_key "group_purchases_tables", "groups"
-  add_foreign_key "group_purchases_tables", "purchases", column: "purchases_id"
+  add_foreign_key "group_purchases_tables", "purchases"
   add_foreign_key "groups", "users", column: "author_id"
   add_foreign_key "purchases", "users", column: "author_id"
 end
