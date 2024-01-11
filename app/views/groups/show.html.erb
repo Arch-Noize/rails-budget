@@ -1,9 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<nav class="bg-blue-700 p-4 relative">
+  <div class="container mx-auto flex items-center justify-between">
+    <div>
+      <%= link_to "Back to groups", groups_path %>
+    </div>
 
-<h3> this is the show page</h3>
+    <div> 
+      <h2>Transactions</h2>
+    </div>
 
-<div>
-  <%= link_to "Back to groups", groups_path %>
+    <div>
+      <img src="https://www.pngall.com/wp-content/uploads/13/Search-Button-White-PNG.png" alt="search"  width="50" height="80">
+    </div>
+  </div>
+</nav>
 
-  <%= button_to "Destroy this group", @group, method: :delete %>
-</div>
+<%= link_to "New transaction", new_group_purchase_path(@group)%>

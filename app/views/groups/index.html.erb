@@ -1,22 +1,29 @@
-<nav class="navbar">
-  <div class="nav-item">
-    <%= render partial: "shared/burger" %>
-  </div>
+<nav class="bg-blue-700 p-4 relative">
+  <div class="container mx-auto flex items-center justify-between">
+    <div>
+      <%= render partial: "shared/burger" %>
+    </div>
 
-  <div class="nav-item"> 
-    <h2>Groups</h2>
-  </div>
+    <div> 
+      <h2>Groups</h2>
+    </div>
 
-  <div class="nav-item">
-    <img src="https://www.pngall.com/wp-content/uploads/13/Search-Button-White-PNG.png" alt="search" class="search">
+    <div>
+      <img src="https://www.pngall.com/wp-content/uploads/13/Search-Button-White-PNG.png" alt="search"  width="50" height="80">
+    </div>
   </div>
 </nav>
 
-<div id="groups" class="rounded-full border-indigo-500/100">
+<div>
   <% @groups.each do |group| %>
-    <p>
-      <%= link_to group.name, group %>
-    </p>
+    <%= link_to group do %>
+      <div class="flex flex-row m-5">
+        <img src=<%=group.icon%> class="ml-4 p-1 basis-1/4 border-2 rounded border-black">
+        <p class="ml-4 p-4 basis-1/2">
+          <%= group.name %>
+        </p>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
