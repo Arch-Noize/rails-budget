@@ -2,16 +2,21 @@
 
 <div id="purchases">
   <% @purchases.each do |purchase| %>
-    <div class="flex flex-row m-5">
+    <div class="flex flex-row m-2 border-2 border-grey bg-white p-2">
       <img src=<%=@group.icon%> class="ml-4 p-1 basis-1/4 border-2 rounded border-black">
-      <p class="ml-4 p-4 basis-1/2">
-        <%= purchase.name %>
-      </p>
-      <p class="ml-4 p-4 basis-1/2">
-        <%= purchase.amount %> $
-      </p>
+      <div class="flex flex-col ml-4 p-4 basis-1/2">
+        <p><%= purchase.name %></p>
+        <p><%= purchase.created_at.strftime("%d/%m/%Y") %></p>
+      </div>
+      <div class="ml-4 p-4 basis-1/2">
+        <p><%= purchase.amount %>$</p>
+      </div>
     </div>
   <% end %>
 </div>
 
-<%= link_to "New purchase", new_group_purchase_path(@group) %>
+<%= link_to new_group_purchase_path(@group), class:"fixed inset-x-0 bottom-0 bg-[#5fb523] p-5 text-center text-white hover:bg-[#55a01f]" do%>
+  <div class="p-2 border border-white">
+    New purchase
+  </div>
+<% end %>

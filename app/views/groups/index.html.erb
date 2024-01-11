@@ -3,14 +3,15 @@
 <div>
   <% @groups.each do |group| %>
     <%= link_to group_purchases_path(group) do %>
-      <div class="flex flex-row m-5 border-2 border-grey">
+      <div class="flex flex-row m-2 border-2 border-grey bg-white p-2">
         <img src=<%=group.icon%> class="ml-4 p-1 basis-1/4 border-2 rounded border-black">
-        <p class="ml-4 p-4 basis-1/2">
-          <%= group.name %>
-        </p>
-        <p class="ml-4 p-4 basis-1/2">
-          <%= group.total %> $
-        </p>
+        <div class="ml-4 p-4 basis-1/2">
+          <p><%= group.name %></p>
+          <p><%= group.created_at.strftime("%d/%m/%Y") %></p>
+        </div>
+        <div class="ml-4 p-4 basis-1/2">
+          <p><%= group.total %>$</p>
+        </div>
       </div>
     <% end %>
   <% end %>
