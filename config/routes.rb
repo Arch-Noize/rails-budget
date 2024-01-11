@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :groups, only: [:index, :show, :new, :create], path: "categories" do
-    resources :purchases, only: [:index, :show, :new], :path => "purchases"
+  resources :groups, only: [:index, :new, :create], path: "categories" do
+    resources :purchases, only: [:index, :show, :new, :create]
   end
 end

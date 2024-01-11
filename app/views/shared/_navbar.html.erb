@@ -1,11 +1,15 @@
 <nav class="bg-blue-700 p-4 relative">
   <div class="container mx-auto flex items-center justify-between">
     <div>
-      <%= link_to "Back to groups", groups_path %>
+      <% if show_burger %>
+        <%= render partial: "shared/burger" %>
+      <% else %>
+        <%= link_to "Back", :back %>
+      <% end %>
     </div>
 
     <div> 
-      <h2>Transactions</h2>
+      <h2><%= title %></h2>
     </div>
 
     <div>
@@ -13,5 +17,3 @@
     </div>
   </div>
 </nav>
-
-<%= link_to "New transaction", new_group_purchase_path(@group)%>
