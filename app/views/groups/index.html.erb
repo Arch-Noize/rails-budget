@@ -1,13 +1,23 @@
-<p style="color: green"><%= notice %></p>
+<nav class="navbar">
+  <div class="nav-item">
+    <%= render partial: "shared/burger" %>
+  </div>
 
-<h1>Groups</h1>
+  <div class="nav-item"> 
+    <h2>Groups</h2>
+  </div>
 
-<div id="groups">
+  <div class="nav-item">
+    <img src="https://www.pngall.com/wp-content/uploads/13/Search-Button-White-PNG.png" alt="search" class="search">
+  </div>
+</nav>
+
+<div id="groups" class="rounded-full border-indigo-500/100">
   <% @groups.each do |group| %>
     <p>
-      <%= link_to "Show this group", group %>
+      <%= link_to group.name, group %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New group", new_group_path %>
+<%= link_to "New group", new_group_path%>
