@@ -22,6 +22,9 @@ a {
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2em;
 }
 
 .sign {

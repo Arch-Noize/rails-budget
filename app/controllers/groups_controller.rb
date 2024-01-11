@@ -2,8 +2,8 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @user = User.includes(:purchases).find(params[:author_id])
-    @groups = @user.purchases
+    @user = current_user
+    @groups = @user.groups.order(created_at: :desc)
   end
 
   def show; end
