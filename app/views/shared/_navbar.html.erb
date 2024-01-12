@@ -4,11 +4,13 @@
       <% if show_burger %>
         <%= render partial: "shared/burger" %>
       <% else %>
-        <%= link_to "Back", :back %>
+        <%= link_to back_path do %>
+          <%= image_tag("https://www.pinclipart.com/picdir/big/544-5440422_back-arrow-icon-transparent-png-clipart-free-download.png", alt: "Back", class:"max-h-10 invert") %>
+        <% end %>
       <% end %>
     </div>
 
-    <div> 
+    <div class="text-white text-lg"> 
       <h2><%= title %></h2>
     </div>
 

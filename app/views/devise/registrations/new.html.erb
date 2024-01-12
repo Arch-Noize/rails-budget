@@ -1,34 +1,27 @@
-<h2>Sign up</h2>
+<%= render partial: "shared/navbar", locals: { title: "Register", show_burger: false, back_path: root_path } %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="container mx-auto px-5 flex flex-col space-y-4">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autocomplete: "name", autocomplete: "name"%>
-  </div>
+    <div class="w-full">
+      <%= f.text_field :name, autocomplete: "name", placeholder: "Name", class: "appearance-none block w-full" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
+    <div class="w-full">
+      <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "appearance-none block w-full" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="w-full">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password (#{@minimum_password_length} characters minimum)", class: "appearance-none block w-full" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="w-full">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: "appearance-none block w-full" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <div class="fixed inset-x-0 bottom-0 bg-[#5fb523] p-5 text-center text-white hover:bg-[#55a01f]">
+      <%= f.submit "Sign up", class: "p-2 w-40 border border-white" %>
+    </div>
+  <% end %>
+</div>
