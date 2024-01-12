@@ -10,6 +10,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -25,9 +26,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# Rails Blog! <a name="about-project"></a>
+# Salty Budget! <a name="about-project"></a>
 
-This is a simple blog website made with Ruby on Rails. 
+This is a simple Budget tracking app that allows you to create categories and add transactions to said categories. This project can be built upon with more features as time goes by! You can find a live demo of it [here](https://rails-budget-hg2b.onrender.com) and a video of me going through the project [here](https://www.loom.com/share/d2992287554c4d138a44d528e4c1064e?sid=45091ceb-0970-43d8-97e0-d2f9da7822de)!
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -42,9 +43,20 @@ This is a simple blog website made with Ruby on Rails.
 
 ### Key Features <a name="key-features"></a>
 
-Currently, this project doesn't have many key features beyond a basic Rails website.
+- A splash screen that leads to "sign up" and "log in" options.
+- A "Categories" page where a user can see and add categories their transactions are being organized into, as well as the total money spent in said categories.
+- A "Purchases" page where a user can see and add transactions.
+- Intuitive design, following the [project guidelines](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+- Adding security measures to prevent users to access other parts of the website without logging in first.
+- Unit spec tests.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+You can find live demo of my project [here](https://www.loom.com/share/d2992287554c4d138a44d528e4c1064e?sid=45091ceb-0970-43d8-97e0-d2f9da7822de)!
 
 <!-- GETTING STARTED -->
 
@@ -76,6 +88,8 @@ This repository and database don't need to be installed.
 
 - To run this app, open your terminal, `cd` into the project's folder and run
 ```bash
+./bin/dev
+# or
 rails server
 ```
 - Then, you can find it at http://localhost:3000/
@@ -132,7 +146,7 @@ If you like this project kindly give it a star⭐️.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank [Microverse](https://github.com/microverseinc) for the immense support.
+The design used for this webapp was created by [Gregoire Vella](https://www.behance.net/gregoirevella) and is based on his [Snapscan](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) design I would like to thank [Microverse](https://github.com/microverseinc) for the immense support. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

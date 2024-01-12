@@ -73,4 +73,18 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Default host for mailer URLs
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Bullet gem config
+  config.after_initialize do
+    Bullet.enable        = true
+    Bullet.alert         = true
+    Bullet.bullet_logger = true
+    Bullet.console       = true
+    Bullet.rails_logger  = true
+    Bullet.add_footer    = true
+    Bullet.n_plus_one_query_enable     = true
+  end
 end

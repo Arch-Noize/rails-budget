@@ -1,0 +1,27 @@
+<%= render partial: "shared/navbar", locals: { title: "Add Transaction", logout: false, back_path: group_purchases_path } %>
+
+<div class="w-full flex flex-col space-y-4">
+  <%= form_with(model: @purchase, url: group_purchases_path, local: true, method: :post) do |f| %>  
+    
+    <div class="w-full">
+      <%= f.text_field :name, autocomplete: "off", placeholder:"Transaction Name", class: "shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="w-full">
+      <%= f.number_field :amount, in: 1..10000, step: 0.01, autocomplete: "off", placeholder:"Amount", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="w-full"> 
+        <% @groups.each do |group| %>
+            <%= check_box_tag 'purchase[group_ids][]', group.id, @purchase.group_ids.include?(group.id), id: dom_id(group) %>
+            <%= label_tag dom_id(group), group.name %>
+        <% end %>
+    </div>
+
+    <div class="w-full fixed inset-x-0 bottom-0 bg-[#5fb523] p-5 text-center text-white hover:bg-[#55a01f]">
+      <div class="p-2 border border-white">
+        <%= f.submit "Create Transaction", class: "button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
