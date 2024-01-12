@@ -29,7 +29,7 @@ RSpec.describe 'Testing Group#index, it should', type: :feature do
     expect(page).to have_field('Category Name')
   end
 
-  it 'has a link to go back to categories' do
+  it 'have a button to logout' do
     puts page.body
     expect(page).to have_button('Logout')
   end

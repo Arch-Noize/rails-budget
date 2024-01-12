@@ -29,7 +29,7 @@ RSpec.describe 'Testing Purchases#index, it should', type: :feature do
     expect(page).to have_field('Transaction Name')
   end
 
-  it 'has a link to go back to categories' do
+  it 'have a link to go back to categories' do
     expect(page).to have_link(href: '/categories')
   end
 end
