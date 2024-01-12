@@ -4,8 +4,8 @@ RSpec.describe 'Testing Purchase#new, it should', type: :feature do
   before :each do
     user = User.create(name: 'Salt', email: 'salt@example.com', password: 'password')
     @groups = [
-      Group.create(name: 'Category 1', icon: 'icon1.png', user: user),
-      Group.create(name: 'Category 2', icon: 'icon2.png', user: user)
+      Group.create(name: 'Category 1', icon: 'icon1.png', user:),
+      Group.create(name: 'Category 2', icon: 'icon2.png', user:)
     ]
     sign_in user
     visit new_group_purchase_path(@groups.first)
