@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Testing Purchases#index, it should', type: :feature do
-  before do
+  before :each do
     user = User.create(name: 'Salt', email: 'salt@example.com', password: 'password')
     @group = Group.create(name: 'Category 1', icon: 'icon1.png', user: user)
     @purchases = [

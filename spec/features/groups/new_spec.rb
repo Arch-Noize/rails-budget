@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Testing Group#new, it should', type: :feature do
-  before do
+  before :each do
     user = User.create(name: 'Salt', email: 'salt@example.com', password: 'password')
     sign_in user
     visit new_group_path
