@@ -1,4 +1,4 @@
-<%= render partial: "shared/navbar", locals: { title: "New Category", show_burger: false, back_path: groups_path } %>
+<%= render partial: "shared/navbar", locals: { title: "New Category", logout: false, back_path: groups_path } %>
 
 <div class="w-full flex flex-col space-y-4">
   <%= form_with(model: @group, url: groups_path, local: true, method: :post) do |f| %>  
