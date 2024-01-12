@@ -66,6 +66,6 @@ end
 
 gem 'bullet'
 gem 'devise', '~> 4.9'
-gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'pg'
-gem "tailwindcss-rails", "~> 2.2"
+gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'tailwindcss-rails', '~> 2.2'
