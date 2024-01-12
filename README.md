@@ -25,9 +25,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# Rails Blog! <a name="about-project"></a>
+# Salty Budget! <a name="about-project"></a>
 
-This is a simple blog website made with Ruby on Rails. 
+This is a simple Budget tracking app that allows you to create categories and add transactions to said categories. This project can be built upon with more features as time goes by! You can find a live demo of it [here](https://rails-budget-hg2b.onrender.com) and a video of me going through the project [here](https://www.loom.com/share/d2992287554c4d138a44d528e4c1064e?sid=45091ceb-0970-43d8-97e0-d2f9da7822de)!
 
 ## 🛠 Built With <a name="built-with"></a>
 
