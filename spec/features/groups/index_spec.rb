@@ -30,7 +30,6 @@ RSpec.describe 'Testing Group#index, it should', type: :feature do
   end
 
   it 'have a button to logout' do
-    puts page.body
     expect(page).to have_button('Logout')
   end
 end
